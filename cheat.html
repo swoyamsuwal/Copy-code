@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Snippet Viewer</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #212121; /* Gray background */
+            color: white; /* White text for all body content */
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            background-color: #171717; /* Sidebar background color */
+            color: white;
+            padding: 20px;
+            width: 20%;
+            box-sizing: border-box;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .sidebar h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            padding: 20px;
+            width: 80%;
+            box-sizing: border-box;
+            margin-left: 20%;
+            height :1000px;
+        }
+
+        .main-content section {
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            color: white; /* White color for h3 headings */
+        }
+
+        .code-block {
+            background-color: #0d0d0d; /* Dark code block background color */
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+            font-family: monospace;
+            position: relative; /* To keep the button inside the box */
+        }
+
+        .code-block pre {
+            margin: 0;
+            color: white; /* White text inside the code block */
+        }
+
+        .copy-btn {
+            background-color: #000; /* Black button */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px; /* Rounded corners */
+            position: absolute;
+            top: 10px; /* Top-right corner */
+            right: 10px;
+            z-index: 1;
+        }
+
+        .copy-btn:hover {
+            background-color: #333;
+        }
+
+        .copied-btn {
+            background-color: #2ecc71;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Code Snippets</h2>
+            <ul>
+                <li><a href="#c-code">C Code</a></li>
+                <li><a href="#java-code">Java Code</a></li>
+                <li><a href="#python-code">Python Code</a></li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <section id="c-code">
+                <h3>C Code</h3>
+                <div class="code-block">
+                    <pre>
+// Example code to open a file in C
+#include <stdio.h>
+
+int main() {
+    FILE *file;
+    char filename[] = "example.txt";
+
+    file = fopen(filename, "r");
+    if (file == NULL) {
+        printf("Error: Could not open file.\n");
+        return 1;
+    }
+
+    printf("File opened successfully.\n");
+    fclose(file);
+    return 0;
+}
+                    </pre>
+                    <button class="copy-btn" onclick="copyCode('c-code', this)">Copy Code</button>
+                </div>
+            </section>
+            <section id="c-code">
+                <h3>C Code</h3>
+                <div class="code-block">
+                    <pre>
+// Example code to open a file in C
+#include <stdio.h>
+
+int main() {
+    FILE *file;
+    char filename[] = "example.txt";
+
+    file = fopen(filename, "r");
+    if (file == NULL) {
+        printf("Error: Could not open file.\n");
+        return 1;
+    }
+
+    printf("File opened successfully.\n");
+    fclose(file);
+    return 0;
+}
+                    </pre>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>
+                    <button class="copy-btn" onclick="copyCode('c-code', this)">Copy Code</button>
+                </div>
+            </section><section id="c-code">
+                <h3>C Code</h3>
+                <a>Hello world </a>
+                <div class="code-block">
+                    <pre>
+// Example code to open a file in C
+#include <stdio.h>
+
+int main() {
+    FILE *file;
+    char filename[] = "example.txt";
+
+    file = fopen(filename, "r");
+    if (file == NULL) {
+        printf("Error: Could not open file.\n");
+        return 1;
+    }
+
+    printf("File opened successfully.\n");
+    fclose(file);
+    return 0;
+}
+                    </pre>
+                    <button class="copy-btn" onclick="copyCode('c-code', this)">Copy Code</button>
+                </div>
+            </section>
+            <section id="java-code">
+                <h3>Java Code</h3>
+                <div class="code-block">
+                    <pre>
+// Example Java program
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+                    </pre>
+                    <button class="copy-btn" onclick="copyCode('java-code', this)">Copy Code</button>
+                </div>
+            </section>
+            
+            <section id="python-code">
+                <h3>Python Code</h3>
+                <div class="code-block">
+                    <pre>
+# Example Python program
+print("Hello, World!")
+                    </pre>
+                    <button class="copy-btn" onclick="copyCode('python-code', this)">Copy Code</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function copyCode(sectionId, btnElement) {
+            const codeBlock = document.querySelector(`#${sectionId} .code-block`);
+            const textToCopy = codeBlock.textContent;
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                btnElement.textContent = 'Copied';
+                btnElement.classList.add('copied-btn');
+                setTimeout(() => {
+                    btnElement.textContent = 'Copy Code';
+                    btnElement.classList.remove('copied-btn');
+                }, 2000); // Resets the button text after 2 seconds
+            }).catch((err) => {
+                console.error("Failed to copy text: ", err);
+            });
+        }
+    </script>
+</body>
+</html>
